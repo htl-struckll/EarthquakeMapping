@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EarthquakeMappingV1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        ResizeMode="CanMinimize"
+        Title="EarhquakeMapping" Height="640" Width="800">
     <Grid>
-        
+        <Grid x:Name="MapGrid" Margin="45,10,44,10">
+            <Grid.Background>
+                <ImageBrush ImageSource="Pics/mercator_map.jpg" Stretch="UniformToFill"/>
+            </Grid.Background>
+        </Grid>
     </Grid>
 </Window>
