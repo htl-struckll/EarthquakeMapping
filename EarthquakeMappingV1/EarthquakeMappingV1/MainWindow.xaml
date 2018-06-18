@@ -9,18 +9,12 @@
         ResizeMode="CanMinimize"
         Title="EarhquakeMapping" Height="543.601" Width="1228.4">
     <Grid>
-        <Grid Margin="87,339,1036.4,82.4">
-            <RadioButton x:Name="RadioThirtyDays" Margin="0,0,0,58" IsChecked="True">Past 30 days</RadioButton>
-            <RadioButton x:Name="RadioSevenDays" Margin="0,27,0,30">Past 7 days</RadioButton>
-            <RadioButton x:Name="RadioPastDay" Margin="0,52,0,10">Past day</RadioButton>
-        </Grid>
-
         <Grid Margin="186,0,-0.4,0.4">
             <gmaps:GMapControl x:Name="MapView" Loaded="MapView_Loaded"/>
         </Grid>
 
         <Grid x:Name="ComboBoxLoadGrid" Margin="24,458,1070.4,10.4">
-            <ComboBox>
+            <ComboBox x:Name="LoadComboBox">
                 <ComboBoxItem>
                     <TextBlock MouseDown="LoadDropDown_MouseDown" TextAlignment="Center" Width="109">30 days</TextBlock>
                 </ComboBoxItem>
@@ -31,9 +25,9 @@
                     <TextBlock MouseDown="LoadDropDown_MouseDown"  TextAlignment="Center" Width="109">Yesterday</TextBlock>
                 </ComboBoxItem>
             </ComboBox>
-            <Grid IsHitTestVisible="False">
-                <Rectangle Stroke="Black" Fill="LightGray"></Rectangle>
-                <TextBlock TextAlignment="Center" FontSize="17" Margin="0,5,0,0.4">Load</TextBlock>
+            <Grid>
+                <Rectangle MouseEnter="MouseEnterChangeColorFromLightToDarkGray" MouseDown="LoadRec_MouseDown" MouseLeave="MouseLeaveChangeColorFromDarkToLightGray" Stroke="Black" Fill="LightGray"></Rectangle>
+                <TextBlock x:Name="LoadTextBlock" IsHitTestVisible="False" TextAlignment="Center" FontSize="17" Margin="0,5,0,0.4">Load</TextBlock>
             </Grid>
         </Grid>
     </Grid>
