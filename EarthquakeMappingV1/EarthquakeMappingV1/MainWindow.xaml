@@ -4,14 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EarthquakeMappingV1"
+        xmlns:gmaps="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="EarhquakeMapping" Height="640" Width="800">
+        Title="EarhquakeMapping" Height="543.601" Width="1228.4">
     <Grid>
-        <Grid x:Name="MapGrid" Margin="45,10,44,10">
-            <Grid.Background>
-                <ImageBrush ImageSource="Pics/mercator_map.jpg" Stretch="UniformToFill"/>
-            </Grid.Background>
+        <Grid Margin="87,339,1036.4,82.4">
+            <RadioButton x:Name="RadioThirtyDays" Margin="0,0,0,58" IsChecked="True">Past 30 days</RadioButton>
+            <RadioButton x:Name="RadioSevenDays" Margin="0,27,0,30">Past 7 days</RadioButton>
+            <RadioButton x:Name="RadioPastDay" Margin="0,52,0,10">Past day</RadioButton>
+        </Grid>
+
+        <Grid Margin="186,0,-0.4,0.4">
+            <gmaps:GMapControl x:Name="MapView" Loaded="MapView_Loaded"/>
+        </Grid>
+
+        <Grid x:Name="ComboBoxLoadGrid" Margin="24,458,1070.4,10.4">
+            <ComboBox>
+                <ComboBoxItem>
+                    <TextBlock MouseDown="LoadDropDown_MouseDown" TextAlignment="Center" Width="109">30 days</TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock MouseDown="LoadDropDown_MouseDown"  TextAlignment="Center" Width="109">7 days</TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock MouseDown="LoadDropDown_MouseDown"  TextAlignment="Center" Width="109">Yesterday</TextBlock>
+                </ComboBoxItem>
+            </ComboBox>
+            <Grid IsHitTestVisible="False">
+                <Rectangle Stroke="Black" Fill="LightGray"></Rectangle>
+                <TextBlock TextAlignment="Center" FontSize="17" Margin="0,5,0,0.4">Load</TextBlock>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
+
