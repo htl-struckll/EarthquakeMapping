@@ -47,9 +47,9 @@ namespace EarthquakeMappingV1
         /// <summary>
         /// Draws the marker
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="size"></param>
+        /// <param name="x">x coordinate</param>
+        /// <param name="y">y coordinate</param>
+        /// <param name="size">size of the marker</param>
         private void Draw(double x, double y, double size)
         {
             try
@@ -68,11 +68,10 @@ namespace EarthquakeMappingV1
                 };
 
                 _markers.Add(marker);
-                //MapView.Markers.Add(marker);
             }
             catch (Exception ex)
             {
-                Log(ex.Message + "| " + ex.StackTrace, "Error");
+                Log(ex.Message + " | " + ex.StackTrace, "Error");
             }
         }
 
@@ -169,8 +168,6 @@ namespace EarthquakeMappingV1
         private void MapView_Loaded(object sender, RoutedEventArgs e)
         {
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
-            // choose your provider here
-            //MapView.MapProvider = GMap.NET.MapProviders.OpenStreetMapProvider.Instance;
             MapView.MapProvider = GMap.NET.MapProviders.ArcGIS_Topo_US_2D_MapProvider.Instance;
             MapView.MinZoom = 0;
             MapView.MaxZoom = 10;
