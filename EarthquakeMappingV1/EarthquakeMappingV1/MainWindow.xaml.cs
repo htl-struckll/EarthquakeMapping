@@ -170,7 +170,7 @@ namespace EarthquakeMappingV1
             GMaps.Instance.Mode = AccessMode.ServerAndCache;
             MapView.MapProvider = GMap.NET.MapProviders.ArcGIS_Topo_US_2D_MapProvider.Instance;
             MapView.MinZoom = 0;
-            MapView.MaxZoom = 10;
+            MapView.MaxZoom = 2;
             // whole world zoom
             MapView.Zoom = 0;
             // lets the map use the mousewheel to zoom
